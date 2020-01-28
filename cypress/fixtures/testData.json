@@ -1,3 +1,5 @@
 {
-  "baseUrl": "https://google.com"
+  "baseUrl": "https://google.com",
+  "searchText":"Selenium",
+  "expectedSearchSelector":"[href='https://selenium.dev/'] > .LC20lb"
 }

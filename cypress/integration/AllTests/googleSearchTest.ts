@@ -9,7 +9,8 @@ describe("This is sample test suit",function(){
 
 it('should write in search box',function(){
     cy.visit(this.dataObj.baseUrl)
-google.typeInSearchBox("Selenuium")
+google.typeInSearchBox(this.dataObj.searchText)
+google.verifyIfTextExists(this.dataObj.expectedSearchSelector,this.dataObj.searchText)
 
 })
 
