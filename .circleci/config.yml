@@ -27,7 +27,8 @@ jobs:
           paths:
             - .cache
             - tmp
-  test1:
+
+  GoogleSearchTest1:
     working_directory: ~/tmp
     docker:
       - image: 'cypress/base:10'
@@ -45,7 +46,9 @@ jobs:
           path: cypress/videos
       - store_artifacts:
           path: cypress/screenshots
-  test2:
+
+
+  GoogleSearchTest2:
     working_directory: ~/tmp
     docker:
       - image: 'cypress/base:10'
@@ -63,7 +66,9 @@ jobs:
           path: cypress/videos
       - store_artifacts:
           path: cypress/screenshots
-  test3:
+
+
+  GoogleSearchTest3:
     working_directory: ~/tmp
     docker:
       - image: 'cypress/base:10'
@@ -81,7 +86,8 @@ jobs:
           path: cypress/videos
       - store_artifacts:
           path: cypress/screenshots
-  test4:
+
+      GoogleSearchTest4:
     working_directory: ~/tmp
     docker:
       - image: 'cypress/base:10'
@@ -99,6 +105,25 @@ jobs:
           path: cypress/videos
       - store_artifacts:
           path: cypress/screenshots
+
+          GoogleSearchTest5:
+            working_directory: ~/tmp
+            docker:
+              - image: 'cypress/base:10'
+                environment:
+                  TERM: xterm
+            steps:
+              - attach_workspace:
+                  at: ~/
+              - run: ls -la cypress
+              - run: ls -la cypress/integration/AllTests
+              - run:
+                  name: Running cypress tests 4
+                  command: yarn run:cypress --spec cypress/integration/AllTests/googleSearchTest4.spec.ts
+              - store_artifacts:
+                  path: cypress/videos
+              - store_artifacts:
+                  path: cypress/screenshots
 
 workflows:
   version: 2
