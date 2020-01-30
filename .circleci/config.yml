@@ -130,15 +130,18 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - test1:
+      - GoogleSearchTest1:
           requires:
             - build
-      - test2:
+      - GoogleSearchTest2:
           requires:
             - build
-      - test3:
+      - GoogleSearchTest3:
           requires:
             - build
-      - test4:
+      - GoogleSearchTest4:
           requires:
+            - build
+      - GoogleSearchTest5:
+        requires:
             - build
