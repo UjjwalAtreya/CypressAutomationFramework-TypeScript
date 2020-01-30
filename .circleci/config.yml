@@ -87,7 +87,7 @@ jobs:
       - store_artifacts:
           path: cypress/screenshots
 
-      GoogleSearchTest4:
+      GoogleSearchTest44:
     working_directory: ~/tmp
     docker:
       - image: 'cypress/base:10'
