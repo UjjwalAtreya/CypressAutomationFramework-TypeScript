@@ -40,7 +40,7 @@ jobs:
       - run: ls -la cypress/integration/AllTests
       - run:
           name: Running cypress tests 1
-          command: yarn run:cypress --spec cypress/integration/googleSearchTest.spec.ts
+          command: yarn run:cypress --spec cypress/integration/AllTests/googleSearchTest.spec.ts
       - store_artifacts:
           path: cypress/videos
       - store_artifacts:
@@ -58,7 +58,7 @@ jobs:
       - run: ls -la cypress/integration/AllTests
       - run:
           name: Running cypress tests 2
-          command: yarn run:cypress --spec cypress/integration/googleSearchTest1.spec.ts
+          command: yarn run:cypress --spec cypress/integration/AllTests/googleSearchTest1.spec.ts
       - store_artifacts:
           path: cypress/videos
       - store_artifacts:
@@ -76,7 +76,7 @@ jobs:
       - run: ls -la cypress/integration/AllTests
       - run:
           name: Running cypress tests 3
-          command: yarn run:cypress --spec cypress/integration/googleSearchTest2.spec.ts
+          command: yarn run:cypress --spec cypress/integration/AllTests/googleSearchTest2.spec.ts
       - store_artifacts:
           path: cypress/videos
       - store_artifacts:
@@ -94,7 +94,7 @@ jobs:
       - run: ls -la cypress/integration/AllTests
       - run:
           name: Running cypress tests 4
-          command: yarn run:cypress --spec cypress/integration/googleSearchTest3.spec.ts
+          command: yarn run:cypress --spec cypress/integration/AllTests/googleSearchTest3.spec.ts
       - store_artifacts:
           path: cypress/videos
       - store_artifacts:
