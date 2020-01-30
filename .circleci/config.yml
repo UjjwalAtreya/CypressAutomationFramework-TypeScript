@@ -75,7 +75,7 @@ jobs:
       - run: ls -la cypress
       - run: ls -la cypress/integration/AllTests
       - run:
-          name: Running cypress tests 3
+          name: Running cypress tests (try)3
           command: yarn run:cypress --spec cypress/integration/AllTests/googleSearchTest2.spec.ts
       - store_artifacts:
           path: cypress/videos
