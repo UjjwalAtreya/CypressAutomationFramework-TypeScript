@@ -126,6 +126,26 @@ jobs:
           path: cypress/videos
       - store_artifacts:
           path: cypress/screenshots
+  test6:
+    working_directory: ~/tmp
+    docker:
+      - image: 'cypress/base:10'
+        environment:
+          TERM: xterm
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run: ls -la cypress
+      - run: ls -la cypress/integration/AllTests
+      - run:
+          name: Running cypress tests 6
+          command: >-
+            yarn run:cypress --spec
+            cypress/integration/AllTests/googleSearchTest5.spec.ts
+      - store_artifacts:
+          path: cypress/videos
+      - store_artifacts:
+          path: cypress/screenshots
 workflows:
   version: 2
   build_and_test:
@@ -144,5 +164,8 @@ workflows:
           requires:
             - build
       - test5:
+          requires:
+            - build
+      - test6:
           requires:
             - build
