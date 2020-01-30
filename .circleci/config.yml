@@ -26,7 +26,7 @@ jobs:
           paths:
             - .cache
             - tmp
-  test1:
+  googleSearchTest:
     working_directory: ~/tmp
     docker:
       - image: 'cypress/base:10'
@@ -46,7 +46,7 @@ jobs:
           path: cypress/videos
       - store_artifacts:
           path: cypress/screenshots
-  test2:
+  googleSearchTest1:
     working_directory: ~/tmp
     docker:
       - image: 'cypress/base:10'
@@ -66,7 +66,7 @@ jobs:
           path: cypress/videos
       - store_artifacts:
           path: cypress/screenshots
-  test3:
+  googleSearchTest2:
     working_directory: ~/tmp
     docker:
       - image: 'cypress/base:10'
@@ -86,7 +86,7 @@ jobs:
           path: cypress/videos
       - store_artifacts:
           path: cypress/screenshots
-  test4:
+  googleSearchTest3:
     working_directory: ~/tmp
     docker:
       - image: 'cypress/base:10'
@@ -106,7 +106,7 @@ jobs:
           path: cypress/videos
       - store_artifacts:
           path: cypress/screenshots
-  test5:
+  googleSearchTest4:
     working_directory: ~/tmp
     docker:
       - image: 'cypress/base:10'
@@ -126,7 +126,7 @@ jobs:
           path: cypress/videos
       - store_artifacts:
           path: cypress/screenshots
-  test6:
+  googleSearchTest5:
     working_directory: ~/tmp
     docker:
       - image: 'cypress/base:10'
