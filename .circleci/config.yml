@@ -27,102 +27,100 @@ jobs:
           paths:
             - .cache
             - tmp
+  test:
+    working_directory: ~/tmp
+    docker:
+      - image: 'cypress/base:10'
+        environment:
+          TERM: xterm
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run: ls -la cypress
+      - run: ls -la cypress/integration/AllTests
+      - run:
+          name: Running cypress tests
+          command: yarn run:cypress --spec cypress/integration/AllTests/googleSearchTest.spec.ts
+      - store_artifacts:
+          path: cypress/videos
+      - store_artifacts:
+          path: cypress/screenshots
 
+          test2:
+            working_directory: ~/tmp
+            docker:
+              - image: 'cypress/base:10'
+                environment:
+                  TERM: xterm
+            steps:
+              - attach_workspace:
+                  at: ~/
+              - run: ls -la cypress
+              - run: ls -la cypress/integration/AllTests
+              - run:
+                  name: Running cypress tests
+                  command: yarn run:cypress --spec cypress/integration/AllTests/googleSearchTest1.spec.ts
+              - store_artifacts:
+                  path: cypress/videos
+              - store_artifacts:
+                  path: cypress/screenshots
 
-            test1:
-              working_directory: ~/tmp
-              docker:
-                - image: 'cypress/base:10'
-                  environment:
-                    TERM: xterm
-              steps:
-                - attach_workspace:
-                    at: ~/
-                - run: ls -la cypress
-                - run: ls -la cypress/integration/AllTests
-                - run:
-                    name: Running cypress tests 1
-                    command: yarn run:cypress --spec cypress/integration/AllTests/googleSearchTest.spec.js
-                - store_artifacts:
-                    path: cypress/videos
-                - store_artifacts:
-                    path: cypress/screenshots
+                  test3:
+                    working_directory: ~/tmp
+                    docker:
+                      - image: 'cypress/base:10'
+                        environment:
+                          TERM: xterm
+                    steps:
+                      - attach_workspace:
+                          at: ~/
+                      - run: ls -la cypress
+                      - run: ls -la cypress/integration/AllTests
+                      - run:
+                          name: Running cypress tests
+                          command: yarn run:cypress --spec cypress/integration/AllTests/googleSearchTest2.spec.ts
+                      - store_artifacts:
+                          path: cypress/videos
+                      - store_artifacts:
+                          path: cypress/screenshots
 
-            test2:
-              working_directory: ~/tmp
-              docker:
-                - image: 'cypress/base:10'
-                  environment:
-                    TERM: xterm
-              steps:
-                - attach_workspace:
-                    at: ~/
-                - run: ls -la cypress
-                - run: ls -la cypress/integration/AllTests
-                - run:
-                    name: Running cypress tests 2
-                    command: yarn run:cypress --spec cypress/integration/AllTests/googleSearchTest1.spec.js
-                - store_artifacts:
-                    path: cypress/videos
-                - store_artifacts:
-                    path: cypress/screenshots
+                          test4:
+                            working_directory: ~/tmp
+                            docker:
+                              - image: 'cypress/base:10'
+                                environment:
+                                  TERM: xterm
+                            steps:
+                              - attach_workspace:
+                                  at: ~/
+                              - run: ls -la cypress
+                              - run: ls -la cypress/integration/AllTests
+                              - run:
+                                  name: Running cypress tests
+                                  command: yarn run:cypress --spec cypress/integration/AllTests/googleSearchTest3.spec.ts
+                              - store_artifacts:
+                                  path: cypress/videos
+                              - store_artifacts:
+                                  path: cypress/screenshots
 
-            test3:
-              working_directory: ~/tmp
-              docker:
-                - image: 'cypress/base:10'
-                  environment:
-                    TERM: xterm
-              steps:
-                - attach_workspace:
-                    at: ~/
-                - run: ls -la cypress
-                - run: ls -la cypress/integration/AllTests
-                - run:
-                    name: Running cypress tests 3
-                    command: yarn run:cypress --spec cypress/integration/AllTests/googleSearchTest2.spec.js
-                - store_artifacts:
-                    path: cypress/videos
-                - store_artifacts:
-                    path: cypress/screenshots
-
-            test4:
-              working_directory: ~/tmp
-              docker:
-                - image: 'cypress/base:10'
-                  environment:
-                    TERM: xterm
-              steps:
-                - attach_workspace:
-                    at: ~/
-                - run: ls -la cypress
-                - run: ls -la cypress/integration/AllTests
-                - run:
-                    name: Running cypress tests 4
-                    command: yarn run:cypress --spec cypress/integration/AllTests/googleSearchTest3.spec.js
-                - store_artifacts:
-                    path: cypress/videos
-                - store_artifacts:
-                    path: cypress/screenshots
-
-                    test5:
-                      working_directory: ~/tmp
-                      docker:
-                        - image: 'cypress/base:10'
-                          environment:
-                            TERM: xterm
-                      steps:
-                        - attach_workspace:
-                            at: ~/
-                        - run: ls -la cypress
-                        - run: ls -la cypress/integration/AllTests
-                        - run:
-                            name: Running cypress tests 5
-                            command: yarn run:cypress --spec cypress/integration/AllTests/googleSearchTest4.spec.js
-                        - store_artifacts:
-                            path: cypress/videos
-                        - store_artifacts:
-                            path: cypress/screenshots
+                                  test5:
+                                    working_directory: ~/tmp
+                                    docker:
+                                      - image: 'cypress/base:10'
+                                        environment:
+                                          TERM: xterm
+                                    steps:
+                                      - attach_workspace:
+                                          at: ~/
+                                      - run: ls -la cypress
+                                      - run: ls -la cypress/integration/AllTests
+                                      - run:
+                                          name: Running cypress tests
+                                          command: yarn run:cypress --spec cypress/integration/AllTests/googleSearchTest4.spec.ts
+                                      - store_artifacts:
+                                          path: cypress/videos
+                                      - store_artifacts:
+                                          path: cypress/screenshots
 
 workflows:
   version: 2
