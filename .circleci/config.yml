@@ -151,21 +151,21 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - test1:
+      - googleSearchTest:
           requires:
             - build
-      - test2:
+      - googleSearchTest1:
           requires:
             - build
-      - test3:
+      - googleSearchTest2:
           requires:
             - build
-      - test4:
+      - googleSearchTest3:
           requires:
             - build
-      - test5:
+      - googleSearchTest4:
           requires:
             - build
-      - test6:
+      - googleSearchTest5:
           requires:
             - build
